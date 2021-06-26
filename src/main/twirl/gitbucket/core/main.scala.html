@@ -12,7 +12,7 @@
     <meta property="og:type" content="object" />
     <meta property="og:url" content="@context.request.getRequestURL" />
     @if(repository.isEmpty){
-      <meta property="og:image" content="@context.baseUrl/assets/common/images/gitbucket_ogp.png" />
+      <meta property="og:image" content="@context.baseUrl/assets/common/images/codecell.png" />
     }
     @repository.map{ r =>
       <meta property="og:image" content="@context.baseUrl/@r.owner/_avatar" />
@@ -65,9 +65,9 @@
     <div class="wrapper">
       <header class="main-header">
         <a href="@context.path/" class="logo">
-          <span class="logo-mini"><img src="@helpers.assets("/common/images/gitbucket.svg")" alt="" /></span>
+          <span class="logo-mini"><img src="@helpers.assets("/common/images/codecell.svg")" alt="" /></span>
           <span class="logo-lg">
-            <img src="@helpers.assets("/common/images/gitbucket.svg")" alt="" />
+            <img src="@helpers.assets("/common/images/codecell.svg")" alt="" />
             <span class="header-title strong">Codecell</span>
           </span>
         </a>
