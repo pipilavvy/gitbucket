@@ -3,6 +3,12 @@
   showBannerToCreatePersonalAccessToken: Boolean)(implicit context: gitbucket.core.controller.Context)
 @import gitbucket.core.view.helpers
 @gitbucket.core.html.main("Codecell"){
+@if(context.loginAccount.isDefined){
+           <li class="pull-right">
+            <div class="button-group">
+              <a href="@context.path/@context.loginAccount.map(_.userName)" class="btn btn-default">Go to your home</a>
+            </div>
+          </li>
   @gitbucket.core.dashboard.html.sidebar(recentRepositories){
     @context.settings.information.map { information =>
       <div class="alert alert-info" style="background-color: white; color: #555; border-color: #4183c4; font-size: small; line-height: 120%;">
@@ -19,7 +25,9 @@
         </a> and use it in place of a password on the <code>git</code> command line.
       </div>
     }
+
     @gitbucket.core.dashboard.html.tab()
+          
     <div class="container">
       <div class="pull-right">
         <a href="@context.path/activities.atom"><img src="@helpers.assets("/common/images/feed.png")" alt="activities"></a>
@@ -27,4 +35,197 @@
       @gitbucket.core.helper.html.activities(activities)
     </div>
   }
+} else {
+ 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Top Navigation</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="@context.path/plugin-assets/site/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="@context.path/plugin-assets/site/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="@context.path/plugin-assets/site/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="@context.path/plugin-assets/site/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="@context.path/plugin-assets/site/css/_all-skins.min.css">
+ 
+ 
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+ 
+  <!-- Google Font
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">  -->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+ 
+      <!-- Main content -->
+ 
+ <!-- Page Content -->
+    <div class="container">
+    <!-- Features Section -->
+      <div class="row">
+        <div class="col-lg-6">
+          <h3>             Birth Your Ideas To Life</h3>
+          <strong>Codecell is an end to end cloud infrastructure to design, build, test and deploy your ideas.</strong></p>
+          <ul>
+
+            <li>Think an idea</li>
+            <li>Develop the idea</li>
+            <li>Build the idea</li>
+            <li>Serve and scale the idea to the world</li>
+          </ul>
+          <p><b><font color="grey"><i>Here’s to the crazy ones, the misfits, the rebels, the troublemakers, the round pegs in the square holes… the ones who see things differently — they’re not fond of rules… You can quote them, disagree with them, glorify or vilify them, but the only thing you can’t do is ignore them because they change things… they push the human race forward, and while some may see them as the crazy ones, we see genius, because the ones who are crazy enough to think that they can change the world, are the ones who do.
+
+— Steve Jobs</i></b></font></p>
+          <p>At codecell failure means nothing , what matters is hope and passion. We believe that people 
+with passion can achieve anything. It's absolutely cool to fail but what isn't cool is not giving a try.</p>
+Give that try? <a href="http://codecell.io/signin"><b>Join codecell</b></a> </p>
+        </div>
+        <div class="col-lg-6">
+          <!--<img class="img-fluid rounded" src="http://placehold.it/600x350" alt="">-->
+          <img class="img-fluid rounded" src="@context.path/plugin-assets/helloworld/frontpagephoto.png" alt="" height="350" width="600"> 
+        </div>
+      </div>
+      <!-- /.row -->
+ 
+      <!-- Marketing Icons Section -->
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Codes</h4>
+            <div class="card-body">
+              <p class="card-text">Develop, share, fork and host your codes.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Collaborate</h4>
+            <div class="card-body">
+             <p class="card-text">Teamwork is the secret that makes common people achieve uncommon results. — Ifeanyi Onuoha. 
+  Create a team or join one.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Compute</h4>
+            <div class="card-body">
+                <p class="card-text">When you are ready to build or deploy your codes, our compute resources will scale out to your needs.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+ 
+      <!-- Marketing Icons Section -->
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Issue Management</h4>
+            <div class="card-body">
+              <p class="card-text">You can raise issue on any project, subscribe to it and track it, until it gets resolved.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Pull Requests</h4>
+            <div class="card-body">
+           <p class="card-text">Our fingerprints dont fade from lives we touched, contribute to great projects while they are beign built.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">More ...</h4>
+            <div class="card-body">
+              <p class="card-text">Solving tomorrow's problems today</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+ 
+      <!-- Portfolio Section -->
+           <!-- /.row -->
+ 
+  
+      <hr>
+ 
+      <!-- Call to Action Section -->
+      <div class="row mb-4">
+        <div class="col-md-8">
+          <p>The moment you believe you can't do it, everything else begins to crumble. Never stop believing.</p>
+        </div>
+        <div class="col-md-4">
+          <a class="btn btn-lg btn-secondary btn-block" href="#">Go Up</a>
+        </div>
+      </div>
+ 
+    </div>
+    <!-- /.container -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="pull-right hidden-xs">
+      </div>
+      <strong>Copyright &copy; 2019 <a href="http://codecell.org">codecell</a>.</strong> All rights
+      reserved.
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+ 
+<!-- jQuery 3 -->
+<script src="@context.path/plugin-assets/site/js/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="@context.path/plugin-assets/site/js/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="@context.path/plugin-assets/site/js/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="@context.path/plugin-assets/site/js/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="@context.path/plugin-assets/site/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="@context.path/plugin-assets/site/js/demo.js"></script>
+</body>
+</html>
+}
+ 
+ 
 }
